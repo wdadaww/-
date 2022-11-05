@@ -1,0 +1,10 @@
+/**
+ * 패키지 정의하기
+ * - 소스 상단에 정의한다
+ */
+package io.honeymon.kotlin.study.syntax
+
+import java.util.*
+
+
+}
