@@ -47,3 +47,27 @@ Exception in thread "main" kotlin.UninitializedPropertyAccessException: lateinit
 
 lazy는 람다함수 형태의 초기화 함수를 사용하는 형태로 val 변수를 선언한 뒤, by lazy를 붙이고 람다함수를 정의해주면 된다. 이렇게 코드를 작성하면 코드상으로는 선언시에 즉시 객체를 생성 및 할당하여 변수를 초기화하는 것처럼 보이지만, 실제 실행시에는 val 변수를 사용하는 시점에 초기화가 진행하여 코드의 실행시간을 최적화할 수 있도록 한다. 람다함수로 초기화가 진행되므로 함수안에 여러개의 구문이 들어갈 수 있으며 맨 마지막 구문의 결과가 변수에 할당된다
 
+
+
+# 싱글턴 object
+
+인스턴스가 하나만 있는 클래스 선언하는 키워드!
+
+![image](https://user-images.githubusercontent.com/117493614/200966297-18c1d480-8a3e-4d38-86b1-37c9689c0aa8.png)
+
+
+
+# Companion object
+
+클래스 내의 객체클래스 (static이 아니다... 하지만 비슷한효과가나타난다.)
+
+
+![image](https://user-images.githubusercontent.com/117493614/200966551-b83f187c-1be1-463d-b3b5-c26f62f8a203.png)
+
+
+- 축약형이 가능
+
+![image](https://user-images.githubusercontent.com/117493614/200967509-5924e4b5-52d8-4a50-9345-d90262054290.png)
+
+ 
+
