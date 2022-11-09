@@ -16,9 +16,8 @@
 
 
 # lateinit
-지연초기화
-
-늦은초기화 라 함은, 말그대로 객체 초기화를 늦게하는 것이다.
+ 늦은초기화
+ 말그대로 객체 초기화를 늦게하는 것이다.
 
 ![image](https://user-images.githubusercontent.com/117493614/200717605-e0e8daeb-00d7-4ed3-aefe-3fb070f632d5.png)
 
@@ -34,4 +33,15 @@ Exception in thread "main" kotlin.UninitializedPropertyAccessException: lateinit
 이런식으로 컴파일 단계에서 오류가 발생하기 때문에 잠재적 오류를 방지해주기도 한다.
 
 
+# lazy
+초기화 지연
+
+![image](https://user-images.githubusercontent.com/117493614/200742148-83a4c2aa-eeb9-42c8-b48b-9ad61f333094.png)
+
+
+
+
+변수를 실행하는 시점까지 초기화를 자동으로 늦춰주는 지연 대리자 속성(lazy delegate properties)을 알아보자. lazy는 lateinit과 달리 val 변수를 사용해야한다. val을 사용하기에 값을 변경할 수는 없고, 호출할때 어떤식으로 선언될지 정의할 수 있도록 돕는 초기화 지연 프로퍼티라 할 수 있다.
+
+lazy는 람다함수 형태의 초기화 함수를 사용하는 형태로 val 변수를 선언한 뒤, by lazy를 붙이고 람다함수를 정의해주면 된다. 이렇게 코드를 작성하면 코드상으로는 선언시에 즉시 객체를 생성 및 할당하여 변수를 초기화하는 것처럼 보이지만, 실제 실행시에는 val 변수를 사용하는 시점에 초기화가 진행하여 코드의 실행시간을 최적화할 수 있도록 한다. 람다함수로 초기화가 진행되므로 함수안에 여러개의 구문이 들어갈 수 있으며 맨 마지막 구문의 결과가 변수에 할당된다
 
