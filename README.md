@@ -1,21 +1,31 @@
-# Android Kotlin
+# lateinit
+지연초기화
 
-코틀린 기본 문법정리
+늦은초기화 라 함은, 말그대로 객체 초기화를 늦게하는 것이다.
 
-1.변수선언
-val(value): 변할수없는 상수, 초기화 이후에 값을 변경할수없다.(재할당 불가능)
-var(variable): 일반적인 변수 (재할당이가능)
 
-2.세이프콜(?.)과 엘비스(?:)연산자
-세이프콜과 엘비스 연산자 사용
-null을 허용한변수를 조금더 안전하게 사용하려면 ?. ?:사용하면된다.
-ex) ("str1:$str1 length: ${str1?.lenghth?:1}) 실행하면
-null: 오른쪽값출력 아니라면 왼쪽값이출력
+fun main() {
+    lateinit var text: String
 
-3.조건문. 반복문
-if문(표현식)
-val a = 10 할당
-val b = 20 할당
+    // 대충 중간에 뭔가 했음
+    val result1 = 30
 
-if(a>b) 참인경우 --> print()실행
-else 그렇지않으면  -->실행
+    text = "Result : $result1"
+    println(text)
+
+    // 대충 뭔가 또 했음
+    val result2 = 50
+
+    text = "Result : ${result1 + result2}"
+    println(text)
+}
+ateinit 을 사용하여 text 변수를 선언해줬고, 이후에 어떤 동작의 결과 값을 기반으로 text 를 초기화 해주는 것을 확인할 수 있다.
+
+이후에 또 한 번 값을 바꾸는 것을 확인할 수 있는데, lateinit 변수 선언부를 자세히 보면 var 로 선언되어 있다. lateinit 을 사용하면 늦은 초기화 이후에도 값이 계속하여 바뀔 수 있다.
+
+그럼, 만약 lateinit 을 사용해놓고 늦은 초기화조차 하지 않은 경우는 어떻게 될까?
+
+아래와 같은 에러를 볼 수 있을 것이다.
+
+
+
