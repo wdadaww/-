@@ -115,5 +115,15 @@ in, out 키워드를 알아보기 전에 먼저 제네릭에 대해 간단하게
 
 ![image](https://user-images.githubusercontent.com/117493614/201459034-03ad20e5-cf09-4f66-9017-0ffa695d03a5.png)
 
+# 변성
+
+제네릭에서 파라미터화된 타입이 서로 어떤 관계에 있는지 설명하는 개념.
+공변성, 반공변성, 무공변성으로 나뉜다.
+이펙티브 자바에서는 공변성과 반공변성에 대해서 이야기할 때, PECS라는 규칙을 언급한다.
+PECS 는 Producer - Extends / Consumer - Super 의 약자입니다. 
+
+# 공변성은 자바의 extends 키워드이고 코틀린에서는 out
+# 반공변성은 자바의 super 키워드이고 코틀린에서는 in
+
 
 
