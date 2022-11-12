@@ -72,5 +72,37 @@ lazy는 람다함수 형태의 초기화 함수를 사용하는 형태로 val �
 
 ![image](https://user-images.githubusercontent.com/117493614/200967509-5924e4b5-52d8-4a50-9345-d90262054290.png)
 
+
+# Sealed class
+
+실드란 '봉인된'이라는 의미로 무언가 안전하게 보관하기 위해 묶어 두는 것을 뜻한다. 실드 클래스는 미리 만들어 놓은 자료형들을 묶어서 제공하기 때문에 어떤 의미에서는 열거형 클래스의 확장으로도 볼 수 있다.
+
  
+
+실드 클래스는 sealed 키워드를 통해 선언할 수 있다. 실드 클래스 그 자체는 추상 클래스와 같기 때문에 객체를 만들 수 없다. (즉, 껍데기? 라고 생각하면 된다.) 또한 생성자도 기본적으로 private 이며 private이 아닌 생성자는 허용하지 않는다. 실드 클래스는 같은 파일 안에서는 상속이 가능하지만, 다른 파일에서는 상속이 불가능하게 제한된다. 블록 안에 선언되는 클래스는 상속이 필요한 경우 open 키워드로 선언될 수 있다. 실드 클래스를 사용해보자.
+![image](https://user-images.githubusercontent.com/117493614/201450388-efcd33fa-0c8f-462d-b7a0-9d39f66e256e.png)
+
+
+위  성공/실패를 Result 라는 실드 클래스로 감쌌다. 실드 클래스에서 특정 객체 자료형에 따라 when 문과 is 를 사용해 결과값에 따라 실행이 가능하다. 이렇게 모든 경우 Success / Error 가 열거 되있으므로 else 문이 필요 없다. 이는 실드 클래스를 사용했기 때문이다. (일반적으로 when 문을 사용할 때 컴파일러는 모든 경우의 수를 판단할 수 없기 때문에 else 문을 써야한다.)
+
+![image](https://user-images.githubusercontent.com/117493614/201450575-d81d80e4-4f38-4f2a-a085-e48345ed4b25.png)
+
+
+![image](https://user-images.githubusercontent.com/117493614/201450715-2ce72a34-ca5b-4d58-9dbf-234d8ab741ae.png)
+
+![image](https://user-images.githubusercontent.com/117493614/201450795-c9838dab-291f-4032-b16f-5557fa8caef1.png)
+
+# Enum class
+
+열거형 클래스란 여러개의 상수를 선언하고 열거된 값을 조건에따라 선택할수 있는 클래스이다. 열거형 클래스는
+실드 클래스와 비슷하다. 차이점은 열거형 클래스는 실드 클래스처럼 다양한 자료형을 다루지못한다.
+열거형 클래스는 enum 키워드를 사용해서 선언한다.
+
+
+![image](https://user-images.githubusercontent.com/117493614/201452065-5f7614a5-08c9-45c5-9f26-eb23f3d7ef70.png)
+
+![image](https://user-images.githubusercontent.com/117493614/201452102-d18f145d-acf4-40e0-9eb8-6a7472b3ad13.png)
+
+
+![image](https://user-images.githubusercontent.com/117493614/201452119-100647d8-7e93-49f6-a2cc-312d64a76eb8.png)
 
