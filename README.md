@@ -106,3 +106,14 @@ lazy는 람다함수 형태의 초기화 함수를 사용하는 형태로 val �
 
 ![image](https://user-images.githubusercontent.com/117493614/201452119-100647d8-7e93-49f6-a2cc-312d64a76eb8.png)
 
+
+# 제네릭 (Gneric)
+
+in, out 키워드를 알아보기 전에 먼저 제네릭에 대해 간단하게 짚고 넘어가도록 하자.
+제네릭은 자주 보았던 <> 요런 모양을 가진 친구이다.
+클래스, 인터페이스, 함수 등에서 동일한 코드를 재사용하고 싶을때 여러 타입을 지원하기 위한 유용한 기능이다.
+
+![image](https://user-images.githubusercontent.com/117493614/201459034-03ad20e5-cf09-4f66-9017-0ffa695d03a5.png)
+
+
+
