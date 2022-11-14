@@ -128,7 +128,7 @@ PECS 는 Producer - Extends / Consumer - Super 의 약자입니다.
  * out: A<서브타입>을 A<슈퍼타입>에 대입할수있도록지원
  
  * in: A<슈퍼타입>을 A<서브타입>에 대입할수있도록 지원
- * A<*>은 타입인수가 무엇이든 상관없이 대입 할 수 있도록 지원
+ * 스타프로젝션: A<*>은 타입인수가 무엇이든 상관없이 대입 할 수 있도록 지원
  
  ![image](https://user-images.githubusercontent.com/117493614/201503964-26bebe07-4873-43ff-988d-d82054f828ac.png)
 
