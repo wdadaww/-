@@ -134,5 +134,83 @@ PECS 는 Producer - Extends / Consumer - Super 의 약자입니다.
 
  
 
+# 액티비티 생명주기
+
+![image](https://user-images.githubusercontent.com/117493614/202933766-ba2f04af-7370-40be-a071-919413246baf.png)
+
+
+* 1.앱을 실행한다.
+
+![image](https://user-images.githubusercontent.com/117493614/202933921-72791de4-a52b-4cad-8398-6f6c3ba7ebf6.png)
+
+![image](https://user-images.githubusercontent.com/117493614/202933929-669c1788-5ab0-42af-8b1d-2a4aed48a00a.png)
+
+OnCreate()-> onStart()-> onResume() 순으로 실행.
+
+1.최초에 한번 OnCreate()실행
+
+2.앱이 화면에 보이는 시점에 OnStart()실행
+
+3.사용자가(버튼을 클릭하는 등) 상호 작용을 할수 있도록 준비된 시점에 onResume()실행
+
+
+
+* 2.앱을 실행한후 닫은 경우
+
+
+![image](https://user-images.githubusercontent.com/117493614/202933921-72791de4-a52b-4cad-8398-6f6c3ba7ebf6.png) 
+
+![image](https://user-images.githubusercontent.com/117493614/202934116-b714aab0-fed8-4ac5-9604-97341f4f1be5.png)
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934095-2dcc78ef-ad25-4356-aacf-749562b2519c.png)
+
+앱을 종료하니 위에서 로그를보면 OnResume 이후 onPause()-> onStop()-> onDestroy()순으로 실행
+
+1. 사용자가 상호 작용을 할수 시점에서 OnPause()실행.
+
+2. 앱이 화면이 보이지않게되면서 OnStop() 실행.
+
+3. 앱이 종료되면서 onDestroy()실행.
+
+
+* 3.앱을 닫은후 다시 켠경우.
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934487-d43ea2f8-d921-4f48-93bb-0c3c1a6b33a2.png)
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934492-210cca4f-d093-479b-9539-ec6389f5be8d.png)
+
+![image](https://user-images.githubusercontent.com/117493614/202934530-f2bdf675-665d-4624-be2e-cea5da80a573.png)
+
+앱을 처음 실행했을때 와 같은 과정이다.
+
+
+* 4.기기의 홈 버튼을 눌러  앱을 백그라운드로 보낸경우.
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934629-3a2a9cd4-9ca9-4361-b917-3a978861446d.png)
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934637-d501080b-8bdb-49be-97d9-1e7b133811d8.png)
+
+
+앱을 아예 껐을 때와 다르게 OnDestroy()가 실행되지 않고 OnPause() -> OnStop()이 실행된다.
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934837-c297a722-0c91-4ab5-98ea-b19a4e014a8a.png)
+
+* 5.최근 실행 앱에서 앱을 다시 활성화한 경우
+
+![image](https://user-images.githubusercontent.com/117493614/202934964-9a6bc3ea-e840-4d4e-ad44-8df06c30d46a.png)
+
+
+
+OnRestart() -> OnStart() -> OnResume() 순으로 실행된다.
+
+
+
+![image](https://user-images.githubusercontent.com/117493614/202934975-3b3a0639-3109-461a-ab7c-585296f7987d.png)
 
 
