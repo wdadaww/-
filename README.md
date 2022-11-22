@@ -229,6 +229,22 @@ Fragment는 FragmentActivity 내의 어떤 동작 또는 사용자 인터페이�
 
 ![fragment_lifecycle](https://user-images.githubusercontent.com/117493614/203220860-fbb38f83-a88a-4bcb-b3d4-0f1b7d2a5e49.png)
 
+
+
+초기화단계: OnAttach,OnCreate 함수가 호출.
+프래그먼트의 화면을 구성할 뷰가 준비되어있지않은상태.
+
+생성단계: OnAttach -> OnCreate -> OnCreateView -> OnActivityCreated -> OnStart -> OnResume 함수가 호출됨.
+프래그먼트의 처음 화면이나옴. 이후 다른 프래그먼트로 교체될 때는 백 스택을 사용하지는에 따라 생명주기가 다르게 동작합니다
+
+교체단계: OnPause -> OnStop -> OnDestroyView -> 이후 다시 프래그먼트가 준비되어 화면에출력되면 -> OnCreateView -> OnActivityCreated -> OnStart -> OnResume
+
+-백 스택을 사용하면 이전 프래그먼트로 화면을 전환할수있다
+-그러나 백 스택을 사용하지않으면 프래그먼트가 교체될때 기존의 프래그먼트는 onDestroy까지 호출되어 제거됩니다.
+
+
+소멸단계: 
+
 onCreateView()로 전달된 조작가 container가 상위 ViewGroup이고(액티비티 레이아웃으로부터), 이 안에 프래그먼트 레이아웃이 삽입됩니다. savedInstanceState양자는 취소 Bundle로, 이것은 프래그먼트가 재개되는 느린 경우 프래그먼트의 이전 폐쇄에 대한 데이터를 제공합니다(상태를 복원하는 것은 프래그먼트 수명 주기 처리 에서 더욱 자세히 설명합니다).
 
 inflate()방법은 다음과 같은 세 개의 인수를 취합니다.
