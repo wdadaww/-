@@ -225,7 +225,7 @@ Fragment는 FragmentActivity 내의 어떤 동작 또는 사용자 인터페이�
 프래그먼트는 항상 액티비티 내에서 호스팅되어야 하며 해당 프래그먼트의 수명 주기는 호스트 액티비티의 수명 주기에 직접적으로 영향을 받습니다. 예를 들어 액티비티가 일시정지되는 경우, 그 안의 모든 프래그먼트도 일시정지되며 액티비티가 소멸되면 모든 프래그먼트도 마찬가지로 소멸됩니다. 그러나 액티비티가 실행 중인 동안(재개됨 수명 주기 상태에 있을 경우)에는 각 프래그먼트를 추가 또는 제거하는 등 개별적으로 조작할 수 있습니다. 그와 같은 프래그먼트 트랜잭션을 수행할 때는 이를 액티비티가 관리하는 백 스택에도 추가할 수 있습니다. 각 백 스택 항목이 발생한 프래그먼트 트랜잭션의 기록이 됩니다. 이 백 스택을 사용하면 사용자가 프래그먼트 트랜잭션을 거꾸로 돌릴 수 있습니다(뒤로 이동). 이때 Back 버튼을 누르면 됩니다.
 
 
-* 프래그먼트 생명주기 
+# 프래그먼트 생명주기 
 
 ![fragment_lifecycle](https://user-images.githubusercontent.com/117493614/203220860-fbb38f83-a88a-4bcb-b3d4-0f1b7d2a5e49.png)
 
@@ -237,13 +237,14 @@ Fragment는 FragmentActivity 내의 어떤 동작 또는 사용자 인터페이�
 생성단계: OnAttach -> OnCreate -> OnCreateView -> OnActivityCreated -> OnStart -> OnResume 함수가 호출됨.
 프래그먼트의 처음 화면이나옴. 이후 다른 프래그먼트로 교체될 때는 백 스택을 사용하지는에 따라 생명주기가 다르게 동작합니다
 
-교체단계: OnPause -> OnStop -> OnDestroyView -> 이후 다시 프래그먼트가 준비되어 화면에출력되면 -> OnCreateView -> OnActivityCreated -> OnStart -> OnResume
+
+재개단계: OnPause -> OnStop -> OnDestroyView -> 이후 다시 프래그먼트가 준비되어 화면에출력되면 -> OnCreateView -> OnActivityCreated -> OnStart -> OnResume
 
 -백 스택을 사용하면 이전 프래그먼트로 화면을 전환할수있다
 -그러나 백 스택을 사용하지않으면 프래그먼트가 교체될때 기존의 프래그먼트는 onDestroy까지 호출되어 제거됩니다.
 
 
-소멸단계: 
+소멸단계:  OnPause -> OnStop -> OnDestroyView -> OnDestroy -> OnDetach
 
 onCreateView()로 전달된 조작가 container가 상위 ViewGroup이고(액티비티 레이아웃으로부터), 이 안에 프래그먼트 레이아웃이 삽입됩니다. savedInstanceState양자는 취소 Bundle로, 이것은 프래그먼트가 재개되는 느린 경우 프래그먼트의 이전 폐쇄에 대한 데이터를 제공합니다(상태를 복원하는 것은 프래그먼트 수명 주기 처리 에서 더욱 자세히 설명합니다).
 
