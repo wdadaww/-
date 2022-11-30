@@ -281,4 +281,18 @@ Null 안전: 뷰 결합은 뷰의 직접 참조를 생성하므로 유효하지 
 
 
 # let 함수
+* 변수?. let{}  null이 아니라면 {}블록이 실행됨.
+
+
+
+# 틴더 앱 & 구현하기
+
+* 액티비티 레이아웃
+
+
+![image](https://user-images.githubusercontent.com/117493614/204930766-f481b6f0-2439-4511-9a38-055ff8be0d96.png)
+
+![image](https://user-images.githubusercontent.com/117493614/204930832-05bbbff2-19a8-4655-8978-52103a8f1ee8.png)
+
+![image](https://user-images.githubusercontent.com/117493614/204930869-5c900320-1c15-4ebb-a1fa-9f3a1ea89331.png)
 
